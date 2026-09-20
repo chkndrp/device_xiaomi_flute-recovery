@@ -16,7 +16,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/developer_gsi_keys.mk)
 # Configure emulated_storage.mk
 $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
 
-# OTA device(s)
+# OTA assert, _global suffix is for ROM compatibility
 TARGET_OTA_ASSERT_DEVICE := flute,flute_global
 
 # FastbootD support
@@ -37,7 +37,7 @@ PRODUCT_PACKAGES += \
     otapreopt_script \
     checkpoint_gc
 
-# Symlink /vendor/firmware to /odm/firmware for haptics and touchfeature
+# Some vendor HALs expect firmware to be elsewhere
 BOARD_ROOT_EXTRA_SYMLINKS += \
     /vendor/firmware:/vendor/odm/firmware
 
@@ -46,11 +46,6 @@ PRODUCT_SHIPPING_API_LEVEL  := 34
 PRODUCT_TARGET_VNDK_VERSION := 35
 BOARD_SHIPPING_API_LEVEL := 34
 SHIPPING_API_LEVEL := 34
-
-# Display Size & Density
-TARGET_SCREEN_HEIGHT  := 2560
-TARGET_SCREEN_DENSITY := 320
-TARGET_SCREEN_WIDTH   := 1600
 
 # Dynamic partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
@@ -89,7 +84,6 @@ AB_OTA_POSTINSTALL_CONFIG += \
 PRODUCT_EXTRA_RECOVERY_KEYS += \
     vendor/recovery/security/miui
 
-# Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
 	vendor/qcom/opensource/commonsys-intf/display
 
@@ -110,16 +104,17 @@ TW_NO_SCREEN_BLANK      := true
 TW_NO_HAPTICS           := true
 TW_FRAMERATE            := 120
 
-TW_CUSTOM_CPU_TEMP_PATH := "/sys/class/thermal/thermal_zone14/temp"
-TW_BRIGHTNESS_PATH      := "/sys/class/backlight/panel0-backlight/brightness"
-
-# Vendor modules required for the recovery to function properly
+# TWRP - Modules
 TW_LOAD_VENDOR_MODULES  += "panel_event_notifier.ko xiaomi_touch.ko
 TW_LOAD_VENDOR_MODULES  += focaltech_ft8208.ko nt36532_spi.ko adsp_loader_dlkm.ko
 TW_LOAD_VENDOR_MODULES  += qti_battery_charger.ko camera.ko dwc3-msm.ko"
 
-TW_EXCLUDE_DEFAULT_USB_INIT   := true
-TW_USE_SERIALNO_PROPERTY_FOR_DEVICE_ID := true
+# TWRP - Paths
+TW_CUSTOM_CPU_TEMP_PATH := \
+    "/sys/class/thermal/thermal_zone14/temp"
+
+TW_BRIGHTNESS_PATH := \
+    "/sys/class/backlight/panel0-backlight/brightness"
 
 # TWRP - Crypto
 TW_INCLUDE_CRYPTO               := true

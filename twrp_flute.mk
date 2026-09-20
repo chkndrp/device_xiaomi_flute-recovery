@@ -15,7 +15,6 @@ $(call inherit-product, vendor/twrp/config/common.mk)
 # Import OrangeFox specifics
 $(call inherit-product, device/xiaomi/flute/fox_flute.mk)
 
-## Device identifier
 PRODUCT_DEVICE := flute
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := Redmi Pad 2 Pro / Poco Pad M1
