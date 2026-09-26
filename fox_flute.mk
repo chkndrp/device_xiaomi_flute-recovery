@@ -20,9 +20,6 @@ OF_USE_LOCKSCREEN_BUTTON := 1
 # Quick backup (Boot, sensor data)
 OF_QUICK_BACKUP_LIST := /boot;/persist_image;
 
-# Security (Disables MTP & ADB during password prompt)
-# OF_ADVANCED_SECURITY := 1
-
 # Flashlight & LEDs
 OF_FL_PATH1	:= /tmp/of_torch
 OF_USE_GREEN_LED := 0
