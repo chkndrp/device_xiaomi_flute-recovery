@@ -48,5 +48,5 @@ This recovery tree was initially made for `flute`. For historical purposes,
 build the `twrp_flute` target
 
 ```shell
-lunch twrp_flute-ap2a-eng && mka adbd recoveryimage
+lunch twrp_flute-bp2a-eng && mka adbd recoveryimage
 ```

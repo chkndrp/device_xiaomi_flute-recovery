@@ -4,4 +4,4 @@
 
 PRODUCT_MAKEFILES := $(LOCAL_DIR)/twrp_flute.mk
 
-COMMON_LUNCH_CHOICES := twrp_flute-ap2a-eng
+COMMON_LUNCH_CHOICES := twrp_flute-bp2a-eng
