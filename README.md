@@ -25,7 +25,7 @@ Display                 | 12.1" IPS LCD, 120Hz, 1600x2560 (16:10)
 - [x] FastbootD
 - [x] Flashing
 - [ ] Correct UI offsets
-- [ ] MTP
+- [x] MTP
 - [x] Sideload
 - [x] Backups
 - [x] Filesystems/Mounts
