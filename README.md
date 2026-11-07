@@ -44,6 +44,9 @@ vendor.gatekeeper.is_security_level_spu=0
 This may not be true for the 5G variant of Redmi Pad 2 Pro though. Testing is needed.
 
 ## How to build
+OrangeFox provides a guide to syncing and building the recovery at this page [here](https://wiki.orangefox.tech/dev/building).
+For support with building, refer to [their discord server](https://discord.gg/GpYTArw22N) after reading the [rules](https://wiki.orangefox.tech/telegram_rules).
+
 This recovery tree was initially made for `flute`. For historical purposes,
 build the `twrp_flute` target
 
