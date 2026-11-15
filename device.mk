@@ -37,9 +37,9 @@ PRODUCT_PACKAGES += \
     otapreopt_script \
     checkpoint_gc
 
-# Some vendor HALs expect firmware to be elsewhere
+# Some vendor HALs expect ODM to be elsewhere
 BOARD_ROOT_EXTRA_SYMLINKS += \
-    /vendor/firmware:/vendor/odm/firmware
+    /odm:/vendor/odm
 
 # API
 PRODUCT_SHIPPING_API_LEVEL  := 34
